@@ -22,7 +22,7 @@ export class bookService {
         if (book) return book;
     }
 
-    public async addBook(book: Book) {   
+    public async addBook(book: Book) {
         await books.create(book);
     }
 }

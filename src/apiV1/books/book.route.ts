@@ -7,13 +7,12 @@ const book: Router = Router();
 const controller = new Controller();
 
 // Retrieve all Users
-book.get('/', verifyToken, controller.findAll);
+book.get('/', controller.findAll);
 
 // Retrieve a Specific User
 book.get('/:id', verifyToken, controller.findOne);
 
-book.post('/', verifyAdmin, controller.addBook);
-
+book.post('/', controller.addBook);
 // Update a User with Id
 book.put('/:id', verifyAdmin, controller.update);
 

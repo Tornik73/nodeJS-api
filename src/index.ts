@@ -8,6 +8,5 @@ app.listen(PORT, err => {
   if (err) {
     return console.log(err);
   }
-
   console.log(`Server is listening on ${PORT}`);
 });

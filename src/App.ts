@@ -17,6 +17,7 @@ class App {
   }
 
   private setMiddlewares(): void {
+
     this.express.use(cors());
     this.express.use(morgan('dev'));
     this.express.use(bodyParser.json());
@@ -25,10 +26,11 @@ class App {
   }
 
   private setRoutes(): void {
-    this.express.use('/v1', apiV1);
+    this.express.use('/api', apiV1);
   }
 
   private catchErrors(): void {
+
     this.express.use(errorHandler.notFound);
     this.express.use(errorHandler.internalServerError);
   }

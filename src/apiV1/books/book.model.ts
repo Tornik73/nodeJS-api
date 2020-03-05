@@ -12,17 +12,13 @@ export const books: any = sequelize.define("books", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  author: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
   price: {
     type: Sequelize.INTEGER,
     allowNull: false
   },
   img: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   description: {
     type: Sequelize.STRING,

@@ -7,10 +7,10 @@ export default {
   PORT: process.env.PORT || "3000",
   DB_CONNECTION: {
     host: process.env.DB_HOST || "localhost",
-    database: process.env.DB_NAME || "bookstore",
+    database: process.env.DB_NAME || "bookstoreNode",
     user: process.env.DB_USER || "root",
     port: process.env.DB_PORT || "3306",
-    password: process.env.DB_PASSWORD || "root"
+    password: process.env.DB_PASSWORD || "1234"
   },
   JWT_ENCRYPTION: process.env.JWT_ENCRYPTION || "jwt_please_change",
   JWT_EXPIRATION: process.env.JWT_EXPIRATION || "1h",

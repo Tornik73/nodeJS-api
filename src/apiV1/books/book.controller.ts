@@ -7,10 +7,10 @@ import { bookService } from "../../services/bookService";
 
 export default class BookController {
   public findAll = async (req: Request, res: Response): Promise<any> => {
-    
+
     try {
-      const allBooks = await books.findAll({ attributes: ['id', 'title', 'author', 'price', 'img', 'description']});
-      
+      const allBooks = await books.findAll({ attributes: ['id', 'title', 'price', 'img', 'description'] });
+
       if (!allBooks) {
         return res.status(404).send({
           success: false,
@@ -40,7 +40,7 @@ export default class BookController {
       res.status(200).send(bookDB);
     } catch (err) {
       res.status(500).send({
-        success: false, 
+        success: false,
         message: err.toString(),
         data: null
       });
@@ -49,8 +49,8 @@ export default class BookController {
 
   public findOne = async (req: Request, res: Response): Promise<any> => {
     try {
-      const book = await books.findOne({ where: { id: req.params.id }});
-      
+      const book = await books.findOne({ where: { id: req.params.id } });
+
       if (!book) {
         return res.status(404).send({
           success: false,
@@ -74,14 +74,15 @@ export default class BookController {
       const userUpdated = await books.findOne({ where: { id: req.params.id } });
       userUpdated.update(
         {
-          title, 
-          author, 
+          title,
+          author,
           price,
           description,
-          img, 
+          img,
         },
-        { where: { 
-          id: req.params.id  
+        {
+          where: {
+            id: req.params.id
           }
         });
       if (!userUpdated) {
@@ -115,7 +116,7 @@ export default class BookController {
         });
       }
       // try catch mb
-      res.status(200).send({success: true, message: 'User delete'});
+      res.status(200).send({ success: true, message: 'User delete' });
       user.destroy();
     } catch (err) {
       res.status(500).send({
